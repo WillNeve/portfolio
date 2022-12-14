@@ -1,2 +1,2 @@
-# portfolio
-my personal portfolio site
+# Portfolio
+My personal portfolio site, check it out @ ...
