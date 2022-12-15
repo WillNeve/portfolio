@@ -13,6 +13,7 @@
   padding: 0px 15px;
   background-image: linear-gradient(90deg, rgba(27, 44, 193, 0.2) 0%, rgba(117, 119, 128, 0.2) 20%);
   backdrop-filter: blur(10px);
+  border-bottom: 1px solid #F5F5F5;
   transition: all .3s ease; }
   .nav.away {
     transform: translate(-50%, -100%); }
@@ -104,7 +105,8 @@
     height: fit-content;
     min-height: 30.6px;
     padding: 5px 0px;
-    background-color: #222222;
+    background-color: rgba(34, 34, 34, 0.5);
+    backdrop-filter: blur(10px);
     box-shadow: 0px 0px 4px 2px rgba(245, 245, 245, 0.2);
     display: flex;
     align-items: center;
@@ -126,11 +128,12 @@
   width: 100px;
   height: 100px;
   border-radius: 50%;
-  box-shadow: 0px 0px 5px 3px rgba(9, 21, 64, 0.3); }
+  box-shadow: 0px 0px 3px 1px rgba(245, 245, 245, 0.2); }
 
 .banner-home {
   width: fit-content;
   height: fit-content;
+  background-image: linear-gradient(90deg, rgba(9, 21, 64, 0.2) 0%, rgba(204, 204, 204, 0.2) 40%);
   margin: 0 auto;
   display: flex;
   flex-direction: row;
@@ -141,26 +144,23 @@
   padding: 10px;
   transition: margin .3s ease; }
   .banner-home h1 {
-    color: white; }
+    color: #F5F5F5; }
   .banner-home.down {
     margin-top: 60px; }
 
-.spacebar {
+.button-thin {
   display: block;
   width: fit-content;
   height: fit-content;
   padding: 5px 10px;
-  border: 1px solid #444444;
-  border-radius: 10px;
-  box-shadow: 0px 3px 0px 0px rgba(0, 0, 0, 0.7);
-  background: #F5F5F5;
-  color: #444444;
-  transform: translateY(0px);
-  transition: all .3s ease;
+  border: 1px solid rgba(245, 245, 245, 0.7);
+  box-shadow: 0px 0px 0px 0px rgba(245, 245, 245, 0);
+  color: rgba(245, 245, 245, 0.7);
+  font-weight: 500;
+  transition: all .1s ease;
   margin: 0; }
-  .spacebar:hover {
-    box-shadow: 0px 0px 0px 0px rgba(0, 0, 0, 0.7);
-    transform: translateY(3px); }
+  .button-thin:hover {
+    box-shadow: 0px 0px 5px 2px rgba(245, 245, 245, 0.2); }
 
 * {
   margin: 0;
@@ -171,9 +171,8 @@
   color: rgba(245, 245, 245, 0.7); }
 
 body {
-  background: #111111;
+  background: #17181C;
   scroll-behavior: smooth; }
 
-.silent-link {
-  text-decoration: none;
-  color: initial; }
+a {
+  text-decoration: none; }
