@@ -1,0 +1,18 @@
+.spacebar {
+  display: block;
+  width: fit-content;
+  height: fit-content;
+  padding: 5px 10px;
+  border: 1px solid $gray-dark;
+  border-radius: 10px;
+  box-shadow: 0px 3px 0px 0px rgba($color: #000000, $alpha: 0.7);
+  background: $white;
+  color: $gray-dark;
+  transform: translateY(0px);
+  transition: all .3s ease;
+  &:hover {
+    box-shadow: 0px 0px 0px 0px rgba($color: #000000, $alpha: 0.7);
+    transform: translateY(3px)
+  }
+  margin: 0;
+}

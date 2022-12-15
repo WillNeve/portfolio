@@ -1,4 +1,7 @@
 {
+  "scripts": {
+    "sass:watch": "node-sass -w assets/stylesheets/style.scss src/style.css"
+  },
   "devDependencies": {
     "@babel/core": "^7.1.6",
     "@babel/plugin-proposal-class-properties": "^7.18.6",
