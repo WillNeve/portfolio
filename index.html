@@ -5,10 +5,17 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>William Neve Portfolio</title>
-  <link rel="stylesheet" href="assets/build/style.css"></link>
-  <script src="assets/js/application.js"></script>
+  <link rel="stylesheet" href="src/style.css"></link>
+  <script src="main.js"></script>
 </head>
-<body>
+<body data-controller="terminal">
+  <div class="nav">
+    <h2>WN</h2>
+    <div class="links">
+      <a href="./projects.html" data-action="mouseover->terminal#projects">Projects</a>
+      <a href="./contact.html" data-action="mouseover->terminal#contact">Contact</a>
+    </div>
+  </div>
   <div class="r-container">
     <div class="terminal">
       <div class="codespace">
