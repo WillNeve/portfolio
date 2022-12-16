@@ -6,15 +6,15 @@ export default class extends Controller {
   connect() {
     console.log("Hello, Stimulus!");
     window.terminalFree = true;
-    this.#write("Hello, I'm Will, welcome to my portfolio! I hope you enjoy your stay.");
+    this.#write("Hello, I'm Will, welcome to my portfolio! I hope you enjoy your stay 😎");
   }
 
   projects() {
-    this.#write('See my projects')
+    this.#write('See my projects 🖼️')
   }
 
   contact() {
-    this.#write('Contact me')
+    this.#write('Contact me ✉️')
   }
 
 

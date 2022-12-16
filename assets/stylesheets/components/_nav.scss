@@ -68,4 +68,21 @@ $content-nav-gap: .9375rem; //15px
       }
     }
   }
+  .title {
+    display: flex;
+    flex-direction: row;
+    column-gap: 15px;
+    align-items: center;
+    #position {
+      display: block;
+      opacity: 0;
+      transform: scale(0.4);
+      font-size: 1rem;
+      transition: all .3s ease;
+      &.show {
+        opacity: 1;
+        transform: scale(1);
+      }
+    }
+  }
 }
