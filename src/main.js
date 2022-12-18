@@ -102,21 +102,78 @@ __webpack_require__.r(__webpack_exports__);
 window.Stimulus = _hotwired_stimulus__WEBPACK_IMPORTED_MODULE_0__["Application"].start();
 var context = __webpack_require__("./assets/js/controllers sync recursive \\.js$");
 Stimulus.load(Object(_hotwired_stimulus_webpack_helpers__WEBPACK_IMPORTED_MODULE_1__["definitionsFromContext"])(context));
+
+// scroll functions ------
+
+//initials expansion on page scrolled down
 var initials = document.querySelector('#initials');
+var position = document.querySelector('#position');
+window.initialsMode = true;
+var initialsAnimSpeed = 10;
+var initialsAnimPoint = 136;
+var expandInitials = function expandInitials() {
+  window.initialsMode = false;
+  var initialsReplacement = 'William Neve';
+  position.classList.add('show');
+  var _loop = function _loop(i) {
+    if (i === 8) {
+      return "continue";
+    } else {
+      setTimeout(function () {
+        if (i < 8) {
+          initials.innerHTML = initials.innerHTML.slice(0, -1) + initialsReplacement[i] + 'N';
+        } else {
+          initials.innerHTML += initialsReplacement[i];
+        }
+      }, (i - 1) * initialsAnimSpeed);
+    }
+  };
+  for (var i = 1; i < initialsReplacement.length; i++) {
+    var _ret = _loop(i);
+    if (_ret === "continue") continue;
+  }
+};
+var collapseInitials = function collapseInitials() {
+  window.initialsMode = true;
+  var initialsReplacement = 'William Neve';
+  position.classList.remove('show');
+  var _loop2 = function _loop2(i) {
+    if (i === 8) {
+      return "continue";
+    } else {
+      setTimeout(function () {
+        if (i > 8) {
+          initials.innerHTML = initials.innerHTML.slice(0, -1);
+        } else {
+          initials.innerHTML = initials.innerHTML.slice(0, -2) + 'N';
+        }
+      }, (initialsReplacement.length - i - 1) * initialsAnimSpeed);
+    }
+  };
+  for (var i = initialsReplacement.length - 1; i >= 1; i--) {
+    var _ret2 = _loop2(i);
+    if (_ret2 === "continue") continue;
+  }
+};
+
+// scroll event listener
+
 var oldScrollPos = 0;
 document.addEventListener('scroll', function (_event) {
   var currentScrollPos = window.scrollY;
   if (currentScrollPos > oldScrollPos) {
-    if (currentScrollPos > 50) {
-      var initialsReplacement = 'William Neve';
-      for (var i = 1; i < initialsReplacement.length; i++) {
-        if (i < 7) {
-          initials.innerHTML.pop();
-          initials.innerHTML += initialsReplacement[i] + 'N';
-        }
-      }
+    //scrolling down
+    if (currentScrollPos > initialsAnimPoint && window.initialsMode === true) {
+      expandInitials();
+    }
+    // do other stuff on scroll down?
+  } else {
+    //scorlling up
+    if (currentScrollPos < initialsAnimPoint && window.initialsMode === false) {
+      collapseInitials();
     }
   }
+  oldScrollPos = currentScrollPos;
 });
 
 /***/ }),
@@ -211,17 +268,17 @@ var _default = /*#__PURE__*/function (_Controller) {
     value: function connect() {
       console.log("Hello, Stimulus!");
       window.terminalFree = true;
-      _classPrivateMethodGet(this, _write, _write2).call(this, "Hello, I'm Will, welcome to my portfolio! I hope you enjoy your stay.");
+      _classPrivateMethodGet(this, _write, _write2).call(this, "Hello, I'm Will, welcome to my portfolio! I hope you enjoy your stay 😎");
     }
   }, {
     key: "projects",
     value: function projects() {
-      _classPrivateMethodGet(this, _write, _write2).call(this, 'See my projects');
+      _classPrivateMethodGet(this, _write, _write2).call(this, 'See my projects 🖼️');
     }
   }, {
     key: "contact",
     value: function contact() {
-      _classPrivateMethodGet(this, _write, _write2).call(this, 'Contact me');
+      _classPrivateMethodGet(this, _write, _write2).call(this, 'Contact me ✉️');
     }
   }]);
   return _default;

@@ -4,7 +4,7 @@ module.exports = {
   entry: "./assets/js/application.js",
   mode: "development",
   output: {
-    path: path.resolve(__dirname, "dist"),
+    path: path.resolve(__dirname, "./src"),
     filename: "main.js"
   },
   devtool: "sourcemap",
